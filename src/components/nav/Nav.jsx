@@ -9,27 +9,27 @@ export default function Nav() {
          </div>
          <div className='navCenter'>
             <div className="searchBar">
-               <Search />
-               <input placeholder='Search' className='searchInput' />
+               <Search className='searchIcon' style={{fontSize: 20, marginLeft: 10}} />
+               <input placeholder='Search for spots' className='searchInput' />
             </div>
          </div>
          <div className='navRight'>
             <div className="navLinks">
-               <span className="navLink"></span>
-               <span className="navLink"></span>
+               <span className="navLink">Home</span>
+               <span className="navLink">Timeline</span>
             </div>
             <div className="navIcons">
                <div className="navItem">
                   <Person />
-                  <span className="NavBadge">1</span>
+                  <span className="navBadge">1</span>
                </div>
                <div className="navItem">
                   <Chat />
-                  <span className="NavBadge">4</span>
+                  <span className="navBadge">4</span>
                </div>
                <div className="navItem">
                   <Notifications />
-                  <span className="NavBadge"></span>
+                  <span className="navBadge">3</span>
                </div>
             </div>
             <img src="" alt="" className="navImg" />
