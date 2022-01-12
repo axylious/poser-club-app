@@ -1,5 +1,7 @@
 import { Chat, RssFeed } from '@material-ui/icons'
 import './leftbar.css'
+import {Users} from '../../dummyData'
+import Friend from '../friend/Friend'
 
 export default function Leftbar() {
    return (
@@ -18,20 +20,13 @@ export default function Leftbar() {
             <button className='leftbarBtn'>Show More</button>
             <hr className='leftbarHr'/>
             <ul className='leftbarFriendList'>
-               <li className='leftbarFriend'>
-                  <img src=' alt=' className='leftbarFriendImg' />
-                  <span className='leftbarFriendName'>That boi</span>
-               </li>
-               <li className='leftbarFriend'>
-                  <img src=' alt=' className='leftbarFriendImg' />
-                  <span className='leftbarFriendName'>That boi</span>
-               </li>
-               <li className='leftbarFriend'>
-                  <img src=' alt=' className='leftbarFriendImg' />
-                  <span className='leftbarFriendName'>That boi</span>
-               </li>
+               {Users.map(u => (
+                  <Friend key={u.id} user={u} />
+               ))}
             </ul>
          </div>
       </div>
    )
 }
+
+// left off here => https://youtu.be/zM93yZ_8SvE?t=5908
