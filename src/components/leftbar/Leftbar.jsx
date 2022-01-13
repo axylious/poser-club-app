@@ -28,5 +28,3 @@ export default function Leftbar() {
       </div>
    )
 }
-
-// left off here => https://youtu.be/zM93yZ_8SvE?t=5908
