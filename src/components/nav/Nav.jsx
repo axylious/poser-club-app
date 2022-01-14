@@ -1,11 +1,14 @@
 import './nav.css'
 import { Person, Search, Chat, Notifications } from '@material-ui/icons'
+import {Link} from 'react-router-dom'
 
 export default function Nav() {
    return (
       <div className='navContainer'>
          <div className='navLeft'>
-            <span className="logo">PoserClub</span>
+            <Link to='/' style={{textDecoration: 'none'}}>
+               <span className="logo">PoserClub</span>
+            </Link>
          </div>
          <div className='navCenter'>
             <div className="searchBar">
