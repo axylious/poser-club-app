@@ -1,8 +1,13 @@
 import './nav.css'
 import { Person, Search, Chat, Notifications } from '@material-ui/icons'
 import {Link} from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../../context/AuthContext'
 
 export default function Nav() {
+   const user = useContext(AuthContext).user
+   const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
    return (
       <div className='navContainer'>
          <div className='navLeft'>
@@ -35,7 +40,13 @@ export default function Nav() {
                   <span className="navBadge">3</span>
                </div>
             </div>
-            <img src="" alt="" className="navImg" />
+            <Link to={`/profile/${user.username}`}>
+               <img src={
+                  user.profilePicture 
+                  ? PF + user.profilePicture 
+                  : PF + 'person/noAvi.jpg'
+               } alt="" className="navImg" />
+            </Link>
          </div>
       </div>
    )
