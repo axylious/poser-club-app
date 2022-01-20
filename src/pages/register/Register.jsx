@@ -23,7 +23,6 @@ export default function Register() {
 
          try {
             await axios.post('auth/register', user)
-            console.log(user)
             navigate('/login')
          } catch (err) {
             console.log(err)
@@ -43,7 +42,7 @@ export default function Register() {
                   <input type="text" placeholder='Username' className="loginInput" ref={username} required />
                   <input type="email" placeholder='Email' className="loginInput" ref={email} required />
                   <input type="password" placeholder='Password' className="loginInput" ref={password} required minLength='6' />
-                  <input type="password" placeholder='Password Again' className="loginInput" ref={passwordAgain} required minLength='6' />
+                  <input type="password" placeholder='Password Again' className="loginInput" ref={passwordAgain} required />
                   <button className="loginBtn" type='submit'>Sign Up</button>
                   <Link to='/login'>
                      <button className="loginRegisterBtn">Log into Account</button>
