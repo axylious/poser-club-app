@@ -52,7 +52,10 @@ export default function Share() {
             {file && (
                <div className="shareImgContainer">
                   <img src={URL.createObjectURL(file)} alt="" className="shareImg" />
-                  <Cancel className='shareCancelImg' onClick={() => setFile(null)} />
+                  <Cancel className='shareCancelImg' onClick={() => {
+                     setFile(null)
+                     document.querySelector('form').reset()}} 
+                  />
                </div>
             )}
             <form className="shareBottom" onSubmit={submitHandler}>
