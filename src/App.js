@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path='/' element=
-          {user ? <Home /> : <Register />}  
+          {user ? <Home /> : <Login />}  
         />
         <Route path='/login' element=
           {user ? <Navigate replace to='/' /> : <Login />}   
@@ -21,7 +21,9 @@ function App() {
         <Route path='/register' element=
           {user ? <Navigate replace to='/' /> : <Register />}
         />
-        <Route path='/profile/:username' element={<Profile />} />
+        <Route path='/profile/:username' element=
+          {user ? <Profile /> : <Navigate replace to='/' />}
+        />
       </Routes>
     </BrowserRouter>
   )

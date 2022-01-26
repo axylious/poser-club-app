@@ -3,10 +3,15 @@ import { Person, Search, Chat, Notifications } from '@material-ui/icons'
 import {Link} from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
+import { logoutCall } from '../../apiCalls'
 
 export default function Nav() {
-   const {user} = useContext(AuthContext)
+   const {user, dispatch} = useContext(AuthContext)
    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+
+   const handleClick = () => {
+      logoutCall(dispatch)
+   }
    
    return (
       <div className='navContainer'>
@@ -47,6 +52,9 @@ export default function Nav() {
                   : PF + 'person/noAvi.jpg'
                } alt="" className="navImg" />
             </Link>
+            <button onClick={handleClick}>
+               Log Out
+            </button>
          </div>
       </div>
    )
